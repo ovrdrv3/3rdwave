@@ -1,69 +1,59 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        3rdwave
+  <div>
+    <b-nav>
+      <b-nav-item active>3rdwave</b-nav-item>
+      <b-nav-item>pricing</b-nav-item>
+      <b-nav-item>what we do</b-nav-item>
+    </b-nav>
+    <div id="pond">
+      <h1 class="heading">
+        your orders.
+        <br />
+        <span class="italic">
+          ready for pick up.
+        </span>
       </h1>
-      <h2 class="subtitle">
-        Third wave coffee order pickup landing page and prototype front-end
-        built with nuxt.js
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
     </div>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-
 export default {
-  components: {
-    Logo
-  }
+  components: {}
 }
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  background: url('/coffee_mug-matt-hoffman-unsplash.jpg') no-repeat center
+    center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  font-size: 1.5em;
+  font-family: 'Playfair Display', serif;
+}
+
+#pond {
   display: flex;
-  justify-content: center;
   align-items: center;
-  text-align: center;
+  justify-content: center;
+  height: 94vh;
 }
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+.heading {
+  position: relative;
+  color: wheat;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+.italic {
+  font-style: italic;
 }
 </style>
