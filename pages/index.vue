@@ -56,4 +56,8 @@ body {
 .italic {
   font-style: italic;
 }
+
+.nav-item > a {
+  color: wheat !important;
+}
 </style>
