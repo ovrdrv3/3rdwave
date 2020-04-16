@@ -17,11 +17,19 @@
           >
         </b-card>
       </b-col>
+      <b-col>
+        <ul id="example-1">
+          <li v-for="order in orders" :key="order.id">
+            {{ order.timeElapsed }}
+          </li>
+        </ul>
+      </b-col>
       <b-col
         ><b-card class="notification-text order-card" no-body>
           <b-list-group>
             <b-list-group-item>
               <b-card-title>Donaven</b-card-title>
+              <div v-text="timeElapsed"></div>
               <b-card-sub-title class="mb-4">dine-in</b-card-sub-title>
               <b-card-text>
                 Medium Americano
@@ -34,16 +42,21 @@
               <b-card-text>
                 Vegan Maple donut
               </b-card-text>
-              <b-button href="#" variant="primary">Ready</b-button>
+              <b-button href="#" variant="primary" class="color-bg"
+                >Mark Ready</b-button
+              >
             </b-list-group-item>
 
             <b-list-group-item>
               <b-card-title>Rocio</b-card-title>
+              <div v-text="timeElapsed"></div>
               <b-card-sub-title class="mb-2">to-go</b-card-sub-title>
               <b-card-text>
                 Medium Vanilla Latte
               </b-card-text>
-              <b-button href="#" variant="primary">Ready</b-button>
+              <b-button href="#" variant="primary" class="color-bg"
+                >Mark Ready</b-button
+              >
             </b-list-group-item>
           </b-list-group>
         </b-card></b-col
@@ -58,7 +71,11 @@ export default {
   data() {
     return {
       windowHeight: null,
-      windowWidth: null
+      windowWidth: null,
+      orders: [
+        { time: this.$moment().subtract(4, 'minute'), id: 12783481276346 },
+        { time: this.$moment().subtract(0.5, 'minute'), id: 56498894949873 }
+      ]
     }
   },
   computed: {
@@ -69,6 +86,21 @@ export default {
   mounted() {
     this.windowHeight = window.innerHeight
     this.windowWidth = window.innerWidth
+    this.howLongAgo()
+  },
+  methods: {
+    howLongAgo() {
+      setInterval(() => {
+        this.orders.forEach((element, index) => {
+          // element.timeElapsed = this.$moment(element.time).fromNow()
+          this.$set(
+            element,
+            'timeElapsed',
+            this.$moment(element.time).fromNow()
+          )
+        })
+      }, 1000)
+    }
   }
 }
 </script>
