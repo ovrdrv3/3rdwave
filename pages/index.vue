@@ -1,33 +1,55 @@
 <template>
-  <div>
-    <b-nav :vertical="narrowDevice">
-      <b-nav-item active>3rdwave</b-nav-item>
-      <b-nav-item>what we do</b-nav-item>
-      <b-nav-item>pricing</b-nav-item>
-      <b-nav-item>contact us</b-nav-item>
-    </b-nav>
-    <div
-      id="centerCallToAction"
-      class="wheat-text"
-      :style="{
-        top: windowHeight / 2 - 50 + 'px',
-        left: windowWidth / 2 - 130 + 'px'
-      }"
-      style="position: absolute;"
-    >
-      <h2>
-        your orders.
-        <br />
-        <span class="italic">
-          ready for pick up.
-        </span>
-      </h2>
-      <b-button variant="primary" class="sienna-text wheat-bg"
-        >Contact Us</b-button
+  <b-container>
+    <b-row class="py-5">
+      <b-col>
+        <b-card
+          class="bg-font-color-text rounded mx-auto primary-font-color-bg"
+        >
+          <h2>
+            your orders.
+            <br />
+            <span class="italic">
+              ready for pick up.
+            </span>
+          </h2>
+          <b-button variant="primary" class="font color-bg "
+            >Contact Us</b-button
+          >
+        </b-card>
+      </b-col>
+      <b-col
+        ><b-card class="notification-text order-card" no-body>
+          <b-list-group>
+            <b-list-group-item>
+              <b-card-title>Donaven</b-card-title>
+              <b-card-sub-title class="mb-4">dine-in</b-card-sub-title>
+              <b-card-text>
+                Medium Americano
+              </b-card-text>
+              <b-card-sub-title class="mb-4">Room for cream</b-card-sub-title>
+              <b-card-text>
+                Pourover
+              </b-card-text>
+              <b-card-sub-title class="mb-4">Ethiopian</b-card-sub-title>
+              <b-card-text>
+                Vegan Maple donut
+              </b-card-text>
+              <b-button href="#" variant="primary">Ready</b-button>
+            </b-list-group-item>
+
+            <b-list-group-item>
+              <b-card-title>Rocio</b-card-title>
+              <b-card-sub-title class="mb-2">to-go</b-card-sub-title>
+              <b-card-text>
+                Medium Vanilla Latte
+              </b-card-text>
+              <b-button href="#" variant="primary">Ready</b-button>
+            </b-list-group-item>
+          </b-list-group>
+        </b-card></b-col
       >
-    </div>
-  </div>
-  <!-- </div> -->
+    </b-row>
+  </b-container>
 </template>
 
 <script>
@@ -51,59 +73,48 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+$bg: wheat;
+$font-color: sienna;
+$break-small: 600px;
+$break-large: 1000px;
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active,
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
-  color: wheat !important;
-  background-color: sienna !important;
-  border-color: sienna !important;
+  color: $bg !important;
+  background-color: $font-color !important;
+  border-color: $font-color !important;
 }
 
 .btn-primary {
-  border-color: wheat !important;
+  border-color: $bg !important;
 }
 
-html {
-  height: 100%;
+.bg-font-color-text {
+  color: $font-color;
 }
 
-body {
-  height: 100%;
-  background: url('/coffee_mug-matt-hoffman-unsplash.jpg') no-repeat center
-    center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-  font-size: 1.5em;
-  font-family: 'Playfair Display', serif;
+.color-bg {
+  background-color: $font-color;
 }
 
-.sienna-text {
-  color: sienna;
+.font {
+  color: $bg;
 }
 
-.wheat-text {
-  color: wheat;
-}
-
-.wheat-bg {
-  background-color: wheat;
+.primary-font-color-bg {
+  background-color: $bg;
 }
 
 .italic {
   font-style: italic;
 }
 
-.nav-item > a {
-  font-size: 1.25em;
-  color: wheat !important;
-}
-.nav-item > a:hover {
-  color: sienna !important;
+.order-card {
+  font-size: 0.75em;
+  font-family: 'Lucida Console', Monaco, monospace;
 }
 </style>
