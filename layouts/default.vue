@@ -1,5 +1,18 @@
 <template>
   <div>
+    <b-navbar toggleable="lg" variant="light">
+      <b-navbar-brand class="" href="/">3rdwave</b-navbar-brand>
+
+      <b-navbar-toggle variant="light" target="nav-collapse"></b-navbar-toggle>
+
+      <b-collapse id="nav-collapse" is-nav>
+        <b-navbar-nav>
+          <b-nav-item>what we do</b-nav-item>
+          <b-nav-item>pricing</b-nav-item>
+          <b-nav-item>contact us</b-nav-item>
+        </b-navbar-nav>
+      </b-collapse>
+    </b-navbar>
     <nuxt />
   </div>
 </template>
@@ -23,34 +36,23 @@ export default {
   }
 }
 </script>
-<style lang="scss">
-$primary-font-color: wheat;
-$bg-font-color: sienna;
+<style>
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+  height: 100%;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
+body {
+  height: 100%;
+  font-size: 1.5em;
+  font-family: 'Playfair Display', serif;
 }
 .nav-link,
 .navbar-brand {
   font-size: 1.25em;
-  color: $primary-font-color !important;
+  color: wheat !important;
 }
 .nav-link:hover,
 .navbar-brand:hover {
-  color: $bg-font-color !important;
+  color: sienna !important;
 }
 </style>
