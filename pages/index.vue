@@ -64,8 +64,14 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   components: {},
+  async asyncData({ params }) {
+    const { data } = await axios.get(`http://mincook.test/recipes`)
+    return { recipe: data }
+  },
   data() {
     return {
       windowHeight: null,
@@ -74,7 +80,7 @@ export default {
         {
           name: 'Donaven',
           id: 12783481276346,
-          time: this.$moment().subtract(4, 'minute'),
+          time: this.$moment(),
           dineLocation: 'dine-in',
           itemsOrdered: [
             {
@@ -105,7 +111,7 @@ export default {
         {
           name: 'Rocio',
           id: 56498894949873,
-          time: this.$moment().subtract(0.5, 'minute'),
+          time: this.$moment().subtract(1.5, 'minute'),
           dineLocation: 'to-go',
           itemsOrdered: [
             {
@@ -132,9 +138,13 @@ export default {
   },
   methods: {
     howLongAgo() {
+      // Set new thresholds to format the elapsed time string
+      this.$moment.relativeTimeThreshold('s', 120)
+      this.$moment.relativeTimeThreshold('ss', 3)
       setInterval(() => {
         this.orders.forEach((element, index) => {
           // element.timeElapsed = this.$moment(element.time).fromNow()
+
           this.$set(
             element,
             'timeElapsed',
