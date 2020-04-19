@@ -1,6 +1,6 @@
 <template>
   <b-container>
-    <b-row class="py-5">
+    <b-row>
       <b-col>
         <b-card
           class="bg-font-color-text rounded mx-auto primary-font-color-bg"
@@ -12,9 +12,7 @@
               ready for pick up.
             </span>
           </h2>
-          <b-button variant="primary" class="font color-bg "
-            >Contact Us</b-button
-          >
+          <b-button variant="primary" class="color-bg ">Contact Us</b-button>
         </b-card>
       </b-col>
 
@@ -147,48 +145,4 @@ export default {
 }
 </script>
 
-<style lang="scss">
-$bg: wheat;
-$font-color: sienna;
-$break-small: 600px;
-$break-large: 1000px;
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active,
-.open > .dropdown-toggle.btn-primary {
-  color: $bg !important;
-  background-color: $font-color !important;
-  border-color: $font-color !important;
-}
-
-.btn-primary {
-  border-color: $bg !important;
-}
-
-.bg-font-color-text {
-  color: $font-color;
-}
-
-.color-bg {
-  background-color: $font-color;
-}
-
-.font {
-  color: $bg;
-}
-
-.primary-font-color-bg {
-  background-color: $bg;
-}
-
-.italic {
-  font-style: italic;
-}
-
-.order-card {
-  font-size: 0.75em;
-  font-family: 'Lucida Console', Monaco, monospace;
-}
-</style>
+<style lang="scss"></style>
